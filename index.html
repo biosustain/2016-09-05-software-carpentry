@@ -10,7 +10,7 @@ humandate: "Sep 5-6, 2016"    # human-readable date (e.g., "Feb 17-18, 2020")
 humantime: "09:00 - 16:00"    # human-readable time (e.g., "9:00 am - 4:30 pm")
 startdate: 2016-09-05      # use YYYY-MM-DD format like 2015-01-01
 enddate: 2016-09-06        # use YYYY-MM-DD format like 2015-01-02
-instructor: ["Kai Blin", "Henning Redstig", "Niko Sonnenschein"] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+instructor: ["Kai Blin", "Henning Redestig", "Niko Sonnenschein"] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["Miguel Campodonico", "João Cardoso", "Svetlana Galkina", "Kristian Jensen", "Marta Matos", "Emre Özdemir", "Lasse Pedersen", "Lars Schöning"]     # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 contact: "kblin@biosustain.dtu.dk"      # contact email address for workshop organizer, such as "grace@hopper.org"
 etherpad: "http://pad.software-carpentry.org/2016-09-05-cfb"        # optional (insert the URL for your Etherpad if you're using one)
@@ -202,7 +202,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <tr> <td>09:00</td>  <td>Version control with Git</td> </tr>
       <tr> <td>10:30</td>  <td>Coffee</td> </tr>
       <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
-      <tr> <td>13:00</td>  <td>Managing data with SQL</td> </tr>
+      <tr> <td>13:00</td>  <td>Data analysis using R</td> </tr>
       <tr> <td>14:30</td>  <td>Coffee</td> </tr>
       <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
     </table>
@@ -283,10 +283,11 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 
 <div class="row">
   <div class="col-md-6">
-    <h3 id="syllabus-r">Data visualization in R</h3>
+    <h3 id="syllabus-r">Data analysis and visualization with R</h3>
     <ul>
-      <li>Working with vectors and data frames</li>
-      <li>Reading and plotting data</li>
+      <li><a href="01-r-first-glance/index.html">RStudio, basic syntax, data frames, plotting, getting help</a></li>
+      <li><a href="03-explore-gene-expression">Differentially expressed genes using edgeR</a></li>
+      <li><a href="02-explore-gene-expression">(if time) Organizing code and text in dynamic reports with knitr</a></li>
       <li><a href="{{site.swc_githubio}}/r-novice-inflammation/reference.html">Reference...</a></li>
     </ul>
   </div>
@@ -653,7 +654,8 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
         <a href="http://cran.r-project.org/bin/windows/base/release.htm">this .exe file</a>
         from <a href="http://cran.r-project.org/index.html">CRAN</a>.
         Also, please install the
-        <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
+        <a href="http://www.rstudio.com/ide/download/desktop">RStudio
+        IDE</a>, and the packages ggplot2, edgeR and locfit.
       </p>
     </div>
     <div class="col-md-4">
@@ -664,7 +666,8 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
         <a href="http://cran.r-project.org/bin/macosx/R-latest.pkg">this .pkg file</a>
         from <a href="http://cran.r-project.org/index.html">CRAN</a>.
         Also, please install the
-        <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
+        <a href="http://www.rstudio.com/ide/download/desktop">RStudio
+        IDE</a>, and the packages ggplot2, edgeR and locfit.
       </p>
     </div>
     <div class="col-md-4">
@@ -675,7 +678,8 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
         you can use your package manager (e.g. for Debian/Ubuntu
         run <code>sudo apt-get install r-base</code> and for Fedora run
         <code>sudo yum install R</code>).  Also, please install the
-        <a href="http://www.rstudio.com/ide/download/desktop">RStudio IDE</a>.
+        <a href="http://www.rstudio.com/ide/download/desktop">RStudio
+        IDE</a>, and the packages ggplot2, edgeR and locfit.
       </p>
     </div>
   </div>
