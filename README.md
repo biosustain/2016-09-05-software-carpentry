@@ -1,56 +1,62 @@
 # workshop-template
 
-This repository is [Software Carpentry](http://software-carpentry.org)'s
+This repository is [Software Carpentry][swc-site] and [Data Carpentry][dc-site]'s
 template for creating websites for workshops.
 
-1.  Do *not* fork this repository directly on GitHub.
-    Instead, please use GitHub's importer following the instructions [below](#creating-a-repository)
+1.  Please *do not fork this repository directly on GitHub.*
+    Instead, please use GitHub's importer following [the instructions below](#creating-a-repository)
     to create a website repository for your workshop.
 
 2.  Please *do your work in your repository's `gh-pages` branch*,
-    since that is what is [automatically published as a website by GitHub](https://help.github.com/articles/creating-project-pages-manually/).
+    since that is what is
+    [automatically published as a website by GitHub][github-project-pages].
 
 3.  Once you are done,
-    please **send your repository's URL to the [Software Carpentry administrator](mailto:admin@software-carpentry.org)**.
-    We build the [list of workshops on the main website](http://software-carpentry.org/workshops/index.html)
-    from the data included in your `index.html` page.
-    We can only do that if you [customize](CUSTOMIZATION.md) that page correctly
+    please **send your repository's URL to the [Software Carpentry administrator][contact]**.
+    We build the list of workshops on our websites from the data included in your `index.html` page.
+    We can only do that if you [customize][customization] that page correctly
     *and* send us a link to your workshop website.
 
-4.  Please also read
-    [the notes on customizing your website](CUSTOMIZATION.md) and the [FAQ](FAQ.md).
-    If you're interested in knowing more about why we do things the way we do,
-    please check out the [design notes](DESIGN.md).
-
-5.  If you are teaching Git,
-    please [create a separate repository](#setting-up-a-separate-repository-for-learners)
-    for your learners to practice in.
-
-6.  If you run into problems,
-    or have ideas about how to make this process simpler,
-    please [get in touch](#getting-and-giving-help).
+If you run into problems,
+or have ideas about how to make this process simpler,
+please [get in touch](#getting-and-giving-help).
+The pages on [customizing your website][customization],
+the [FAQ][faq],
+and the [design notes][design] have more detail on what we do and why.
+And please note:
+if you are teaching Git,
+please [create a separate repository](#setting-up-a-separate-repository-for-learners)
+for your learners to practice in.
 
 ## Creating a Repository
 
-1.  Go to [GitHub's importer][import]. 
-2.  Paste the url of this repo as the old repository to clone: https://github.com/swcarpentry/workshop-template
+1.  Log in to GitHub.
+    (If you do not have an account, you can quickly create one for free.)
+    You must be logged in for the remaining steps to work.
 
-3.  Select the owner for your new repository.
+2.  Go to [GitHub's importer][importer].
+
+3.  Paste the url of this repo as the old repository to clone:
+    <https://github.com/swcarpentry/workshop-template>.
+
+4.  Select the owner for your new repository.
     (This will probably be you, but may instead be an organization you belong to.)
 
-4.  Choose a name for your workshop website repository.
+5.  Choose a name for your workshop website repository.
     This name should have the form `YYYY-MM-DD-site`,
-    e.g., `2015-07-01-miskatonic`.
+    e.g., `2016-12-01-miskatonic`,
+    where `YYYY-MM-DD` is the start date of the workshop.
 
-5.  Make sure the repository is public.
+6.  Make sure the repository is public.
 
-6.  At this point, you should have a page like this:
+7.  At this point, you should have a page like this:
 
-    ![](img/using-github-import.png?raw=true)
+    ![](fig/using-github-import.png?raw=true)
 
     You can now click "Begin Import".
     When the process is done,
-    you will receive a message close to "Importing complete! Your new repository julie32/2015-07-01-miskatonic is ready."
+    you will receive a message like
+    "Importing complete! Your new repository gvwilson/2016-12-01-miskatonic is ready."
     and you can go to the new repository by clicking on the name.
 
 **Note:**
@@ -65,149 +71,129 @@ please [get in touch](#getting-and-giving-help).
 1.  Go into your newly-created repository,
     which will be at `https://github.com/your_username/YYYY-MM-DD-site`.
     For example,
-    if `your_username` is `gvwilson`,
-    the repository's URL will be `https://github.com/gvwilson/2015-07-01-mistaktonic`.
+    if your username is `gvwilson`,
+    the repository's URL will be `https://github.com/gvwilson/2016-12-01-miskatonic`.
 
-2.  Edit `index.html` to customize the list of instructors,
+2.  Edit the header of `index.html` to customize the list of instructors,
     workshop venue, etc. 
     You can do this in the browser by clicking on it in the file view on GitHub
     and then selecting the pencil icon in the menu bar:
 
-    ![](img/edit-index-file-menu-bar.png?raw=true)
+    ![](fig/edit-index-file-menu-bar.png?raw=true)
     
     Editing hints are embedded in `index.html`,
-    and full instructions are in [CUSTOMIZATION.md](CUSTOMIZATION.md).
+    and full instructions are in [the customization instructions][customization].
 
-    > Alternatively, you can clone the repository to your desktop,
-    > edit `index.html` there,
-    > and push your changes back to the repository.
-    >
-    > ~~~
-    > git clone -b gh-pages https://github.com/your_username/YYYY-MM-DD-site
-    > ~~~
-    >
-    > This is needed because the imported repository doesn't have a `master` branch.
-    >
-    > **Note:** please do all of your work in your repository's `gh-pages` branch,
-    > since [GitHub automatically publishes that as a website](https://help.github.com/articles/creating-project-pages-manually/).
+3.  Alternatively,
+    if you are already familiar with Git,
+    you can clone the repository to your desktop,
+    edit `index.html` there,
+    and push your changes back to the repository.
 
-3.  Edit `_config.yml` in the same way
-    so that `workshop_repo` and `workshop_site`
-    are the URLs of your repository and your GitHub Pages website respectively.
+    ~~~
+    git clone -b gh-pages https://github.com/your_username/YYYY-MM-DD-site
+    ~~~
 
-    Note: the URL for your website is determined automatically
-    based on the URL for your repository.
-    If your repository is at `https://github.com/your_username/YYYY-MM-DD-site`,
-    its GitHub Pages website is at `http://your_username.github.io/YYYY-MM-DD-site`.
+    You should specify `-b gh-pages` because the imported repository doesn't have a `master` branch.
 
-4.  When you are done editing,
-    you can view your website:
-    if your repository is `https://github.com/your_username/YYYY-MM-DD-site`,
-    its website will be `http://your_username.github.io/YYYY-MM-DD-site`.
+    In order to view your changes once you are done editing,
+    you must push to your GitHub repository:
 
-Full instructions are available in [CUSTOMIZATION.md](CUSTOMIZATION.md).
-This [FAQ](FAQ.md) includes a few extra tips
-(additions are always welcome)
-and these notes on [the background and design](DESIGN.md) of this template may help as well.
+    ~~~
+    git push origin gh-pages
+    ~~~
 
-That's it.
-The following steps are only necessary if you want to run the website locally on your computer.
+    **Note:**
+    please do all of your work in your repository's `gh-pages` branch,
+    since [GitHub automatically publishes that as a website][github-project-pages].
+
+5.  When you are done editing,
+    go to the GitHub Pages URL for your workshop and preview your changes.
+    In the example above, this is `https://gvwilson.github.io/2016-12-01-miskatonic`.
+
+**Note:**
+this template includes some files and directories that most workshops do not need,
+but which provide a standard place to put extra content if desired.
+See the [design notes][design] for more information about these.
+
+Further instructions are available in [the customization instructions][customization].
+This [FAQ][faq] includes a few extra tips (additions are always welcome)
+and these notes on [the background and design][design] of this template may help as well.
 
 ## Checking Your Changes
 
-1.  To check your changes on your desktop you need some softwares
-    described at [Installing Software session](#installing-software).
-    This may require some work to set up,
+If you want to preview your changes on your own machine before publishing them on GitHub,
+you can do so as described below.
+
+1.  Install the software [described below](#installing-software).
+    This may require some work,
     so feel free to preview by pushing to the website.
 
-2.  For some links to work properly,
-    particularly the link to your workshop's Eventbrite registration page,
-    you must view `_site/index.html` using an HTTP server.
-    If you have Jekyll installed,
-    you can do this by running:
+2.  Run the command:
 
     ~~~
-    $ jekyll server -d _site
+    $ jekyll serve
     ~~~
 
-    and going to http://localhost:4000.
+    and go to <http://0.0.0.0:4000> to preview your site.
+    You can also run this command by typing `make serve`
+    (assuming you have Make installed).
+
+3.  Run the command `python bin/workshop_check.py index.html`
+    to check for a few common errors in your workshop's home page.
+    (You must have Python 3 installed to do this.)
+    If you have Make installed,
+    you can also run this command by typing `make workshop-check`.
+
+## Creating Extra Pages
+
+In rare cases,
+you may want to add extra pages to your workshop website.
+You can do this by putting either Markdown or HTML pages in the website's root directory
+and styling them according to the instructions give in
+[the lesson template][lesson-example].
+If you do this,
+you *must* also edit `_config.yml` to set these three values:
+
+1.  `carpentry` is either "dc" (for Data Carpentry) or "swc" (for Software Carpentry).
+    This determines which logos are loaded.
+
+2.  `title` is the title of your workshop (typically the venue and date).
+
+3.  `email` is the contact email address for your workshop,
+    e.g., `gvwilson@miskatonic.edu`.
+
+Note: `carpentry and `email` duplicate information that's in `index.html`,
+but there is no way to avoid this
+without requiring people to edit both files in the usual case
+where no extra pages are created.
 
 ## Installing Software
 
-In order to preview the workshop website locally on your computer,
+If you want to set up Jekyll
+so that you can preview changes on your own machine before pushing them to GitHub,
 you must install the software described below.
+(Note: Julian Thilo has written instructions for
+[installing Jekyll on Windows][jekyll-windows].)
 
-> If you aren't able to install this software (or you just can't be
-> bothered), you can still create a website for your workshop.  Every
-> time you push a change to your website respository the live website
-> will update automatically, so you can check your changes on the live
-> site instead of locally.
+1.  **Ruby**.
+    This is included with Linux and Mac OS X;
+    the simplest option on Windows is to use [RubyInstaller][ruby-installer].
+    You can test your installation by running `ruby --version`.
+    For more information,
+    see [the Ruby installation guidelines][ruby-install-guide].
 
-1.  Ruby 2.0 or greater
+2.  **[RubyGems][rubygems]**
+    (the package manager for Ruby).
+    You can test your installation by running `gem --version`.
 
-    On Debian/Ubuntu based machines you can install it using
+3.  **[Jekyll][jekyll]**.
+    You can install this by running `gem install jekyll`.
 
-    ~~~
-    $ sudo apt-get install ruby2.0 ruby2.0-dev
-    ~~~
-
-2.  NodeJS
-
-    On Debian/Ubuntu based machines you can install it using
-
-    ~~~
-    $ sudo apt-get install nodejs
-    ~~~
-
-3.  Jekyll
-
-    Install `github-pages`:
-
-     ~~~
-     $ gem install github-pages
-     ~~~
-
-     or if that doesn't work:
-
-     ~~~
-     $ gem install jekyll
-     $ gem install kramdown
-     ~~~
-
-     We use Kramdown to translate Markdown into HTML, instead of
-     the default Redcarpet, because Kramdown handles Markdown
-     inside HTML blocks.
-
-    Note: you may need to specify the version of gem to use for installation
-    if you have multiple versions of Ruby installed.
-    For example for version 2.0 you could use:
-
-     ~~~
-     $ gem2.0 install github-pages
-     ~~~
-
-
-2.  The Python YAML module
-
-    If you are using the Anaconda Python distribution, you probably
-    already have it; if you don't, you can install it with:
-
-    ~~~
-    $ conda install pyyaml
-    ~~~
-
-    If you are using some other distribution, you can install the
-    Python YAML module using Pip:
-
-    ~~~
-    $ pip install pyyaml
-    ~~~
-
-    and if you are on Debian Linux, you can use:
-
-    ~~~
-    $ apt-get install python-yaml
-    ~~~
+You can check the formatting of your header by running `bin/workshop_check.py`
+(which is invoked by `make workshop-check`).
+You must have Python 3 installed in order to do this,
+and you will also need the [PyYAML][pyyaml] module.
 
 ## Setting Up a Separate Repository for Learners
 
@@ -231,7 +217,22 @@ and add whatever content you need to it.
 We are committed to offering a pleasant setup experience for our learners and organizers.
 If you find bugs in our instructions,
 or would like to suggest improvements,
-please [file an issue](https://github.com/swcarpentry/workshop-template/issues)
-or [mail us](mailto:admin@software-carpentry.org).
+please [file an issue][issues]
+or [mail us][contact].
 
-[import]: http://import.github.com/new?import_url=https://github.com/swcarpentry/workshop-template
+[contact]: mailto:admin@software-carpentry.org
+[customization]: https://swcarpentry.github.io/workshop-template/customization/
+[dc-site]: http://datacarpentry.org
+[design]: https://swcarpentry.github.io/workshop-template/design/
+[faq]: https://swcarpentry.github.io/workshop-template/faq/
+[github-project-pages]: https://help.github.com/articles/creating-project-pages-manually/
+[importer]: http://import.github.com/new
+[issues]: https://github.com/swcarpentry/workshop-template/issues
+[jekyll]: https://jekyllrb.com/
+[jekyll-windows]: http://jekyll-windows.juthilo.com/
+[lesson-example]: https://swcarpentry.github.io/lesson-example/
+[pyyaml]: https://pypi.python.org/pypi/PyYAML
+[ruby-install-guide]: https://www.ruby-lang.org/en/downloads/
+[ruby-installer]: http://rubyinstaller.org/
+[rubygems]: https://rubygems.org/pages/download/
+[swc-site]: http://software-carpentry.org

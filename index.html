@@ -1,8 +1,8 @@
 ---
 layout: workshop      # DON'T CHANGE THIS.
-root: .               # DON'T CHANGE THIS.
+carpentry: "swc"    # what kind of Carpentry (must be either "dc" or "swc")
 venue: "Technical University of Denmark"        # brief name of host site without address (e.g., "Euphoric State University")
-address: "Bygning 223, 2800 Kgs. Lyngby"      # street address of workshop (e.g., "123 Forth Street, Blimingen, Euphoria")
+address: "Room 207, Building 223, 2800 Kgs. Lyngby"      # street address of workshop (e.g., "123 Forth Street, Blimingen, Euphoria")
 country: "dk"      # country (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_3166-1)
 language: "en"     # language (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_639-1)
 latlng: "55.788738,12.521887"       # fractional latitude and longitude (e.g., "41.7901128,-87.6007318"; you can use http://www.latlong.net/)
@@ -10,17 +10,14 @@ humandate: "Sep 5-6, 2016"    # human-readable date (e.g., "Feb 17-18, 2020")
 humantime: "09:00 - 16:00"    # human-readable time (e.g., "9:00 am - 4:30 pm")
 startdate: 2016-09-05      # use YYYY-MM-DD format like 2015-01-01
 enddate: 2016-09-06        # use YYYY-MM-DD format like 2015-01-02
-instructor: ["Kai Blin", "Henning Redstig", "Niko Sonnenschein"] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+instructor: ["Kai Blin", "Henning Redestig", "Niko Sonnenschein"] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["Miguel Campodonico", "João Cardoso", "Svetlana Galkina", "Kristian Jensen", "Marta Matos", "Emre Özdemir", "Lasse Pedersen", "Lars Schöning"]     # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 contact: "kblin@biosustain.dtu.dk"      # contact email address for workshop organizer, such as "grace@hopper.org"
 etherpad: "http://pad.software-carpentry.org/2016-09-05-cfb"        # optional (insert the URL for your Etherpad if you're using one)
 eventbrite:       # optional (insert the alphanumeric key for Eventbrite registration, e.g., "1234567890AB")
 ---
 
-
 <!-- See instructions in the comments below for how to edit specific sections of this workshop template. -->
-
-
 
 <!--
   HEADER
@@ -122,49 +119,15 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 </p>
 
 <!--
-  ACCESSIBILITY
-
-  Modify the block below if there are any barriers to accessibility or
-  special instructions.
--->
-<p id="accessibility">
-  <strong>Accessibility:</strong> We are committed to making this workshop
-  accessible to everybody.
-  The workshop organisers have checked that:
-</p>
-<ul>
-  <li>The room is wheelchair / scooter accessible.</li>
-  <li>Accessible restrooms are available.</li>
-</ul>
-<p>
-  Materials will be provided in advance of the workshop and
-  large-print handouts are available if needed by notifying the
-  organizers in advance.  If we can help making learning easier for
-  you (e.g. sign-language interpreters, lactation facilities) please
-  {% if page.contact %}
-    <a href='mailto:{{page.contact}}'>get in touch</a>
-  {% else %}
-    <a href='mailto:{{site.contact}}'>get in touch</a>
-  {% endif %}
-  and we will attempt to provide them. 
-</p>
-
-<!--
   CONTACT EMAIL ADDRESS
 
-  Display the contact email address set in the header.  If an address
-  isn't set in the header, the Software Carpentry admin address is
-  used.
+  Display the contact email address set in the configuration file.
 -->
 <p id="contact">
   <strong>Contact</strong>:
   Please mail
-  {% if page.contact %}
-    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
-  {% else %}
-    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
-  {% endif %}
-  for more information.
+  <a href="mailto:{{page.contact}}">{{page.contact}}</a> for more
+  information.
 </p>
 
 <hr/>
@@ -181,17 +144,18 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 <!-- DO NOT EDIT SURVEY LINKS -->
 <p><em>Surveys</em></p>
 <p>Please be sure to complete these surveys before and after the workshop.</p>
-<p><a href='{{ site.swc_pre_survey }}{{ site.github.project_title }}'>Pre-workshop Survey</a></p>
-<p><a href='{{ site.swc_post_survey }}{{ site.github.project_title }}'>Post-workshop Survey</a></p>
+<p><a href="{{ site.pre_survey }}{{ site.github.project_title }}">Pre-workshop Survey</a></p>
+<p><a href="{{ site.post_survey }}{{ site.github.project_title }}">Post-workshop Survey</a></p>
 
 <div class="row">
   <div class="col-md-6">
     <h3>Day 1</h3>
     <table class="table table-striped">
       <tr> <td>09:00</td>  <td>Automating tasks with the Unix shell</td> </tr>
-      <tr> <td>10:30</td> <td>Coffee</td> </tr>
+      <tr> <td>10:30</td>  <td>Coffee</td> </tr>
+      <tr> <td>10:45</td>  <td>Version control with Git</td> </tr>
       <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
-      <tr> <td>13:00</td>  <td>Building programs with Python</td> </tr>
+      <tr> <td>13:00</td>  <td>Data analysis and visualization using R</td> </tr>
       <tr> <td>14:30</td>  <td>Coffee</td> </tr>
       <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
     </table>
@@ -199,10 +163,10 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   <div class="col-md-6">
     <h3>Day 2</h3>
     <table class="table table-striped">
-      <tr> <td>09:00</td>  <td>Version control with Git</td> </tr>
+      <tr> <td>09:00</td>  <td>Building programs with Python</td> </tr>
       <tr> <td>10:30</td>  <td>Coffee</td> </tr>
       <tr> <td>12:00</td>  <td>Lunch break</td> </tr>
-      <tr> <td>13:00</td>  <td>Managing data with SQL</td> </tr>
+      <tr> <td>13:00</td>  <td>Building programs with Python</td> </tr>
       <tr> <td>14:30</td>  <td>Coffee</td> </tr>
       <tr> <td>16:00</td>  <td>Wrap-up</td> </tr>
     </table>
@@ -262,7 +226,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <li>Looping over files</li>
       <li>Creating and running shell scripts</li>
       <li>Finding things</li>
-      <li><a href="{{site.cfb_githubio}}/shell-novice/reference.html">Reference...</a></li>
+      <li><a href="{{site.swc_pages}}/shell-novice/reference/">Reference...</a></li>
     </ul>
   </div>
   <div class="col-md-6">
@@ -276,18 +240,21 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <li>Resolving conflicts</li>
       <li>Open licenses</li>
       <li>Where to host work, and why</li>
-      <li><a href="{{site.swc_githubio}}/git-novice/reference.html">Reference...</a></li>
+      <li><a href="{{site.swc_pages}}/git-novice/reference/">Reference...</a></li>
     </ul>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-6">
-    <h3 id="syllabus-r">Data visualization in R</h3>
+    <h3 id="syllabus-r">Data analysis and visualization in R</h3>
     <ul>
       <li>Working with vectors and data frames</li>
       <li>Reading and plotting data</li>
-      <li><a href="{{site.swc_githubio}}/r-novice-inflammation/reference.html">Reference...</a></li>
+      <li>Creating and using functions</li>
+      <li>Loops and conditionals</li>
+      <li>Using R from the command line</li>
+      <li><a href="{{site.swc_pages}}/r-novice-inflammation/reference/">Reference...</a></li>
     </ul>
   </div>
   <div class="col-md-6">
@@ -299,10 +266,9 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       <li>Creating and using functions</li>
       <li>Loops and conditionals</li>
       <li>Defensive programming</li>
-      <li>Using Python from the command line</li>
-      <li><a href="{{site.cfb_githubio}}/python-novice-biopython/reference.html">Reference...</a></li>
-    </ul>
-  </div>
+      <li><a href="{{site.swc_pages}}/matlab-novice-inflammation/reference/">Reference...</a></li>
+     </ul>
+   </div>
 </div>
 
 <hr/>
@@ -329,7 +295,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 <p>
   We maintain a list of common issues that occur during installation as a reference for instructors
   that may be useful on the
-  <a href = "https://github.com/swcarpentry/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
+  <a href = "{{site.swc_github}}/workshop-template/wiki/Configuration-Problems-and-Solutions">Configuration Problems and Solutions wiki page</a>.
 </p>
 
 <div id="shell"> <!-- Start of 'shell' section. -->
@@ -348,40 +314,35 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
         <li>Download the Git for Windows <a href="https://git-for-windows.github.io/">installer</a>.</li>
         <li>Run the installer and follow the steps bellow:
           <ol>
-            <!-- Git 2.6.1 Setup -->
-            <!-- Welcome to the Git Setup Wizard -->
-            <li>Click on "Next".</li>
+            <!-- Git 2.8.2 Setup -->
             <!-- Information -->
             <li>Click on "Next".</li>
-            <!-- Select Destination Location -->
-            <li>Click on "Next".</li>
             <!-- Select Components -->
-            <li>Click on "Next".</li>
-            <!-- Select Start Menu Folder -->
             <li>Click on "Next".</li>
             <!-- Adjusting your PATH environment -->
             <li>
               <strong>
-                Select "Use Git from the Windows Command Prompt" and click on "Next".
+                Keep "Use Git from the Windows Command Prompt" selected and click on "Next".
               </strong>
                 If you forgot to do this programs that you need for the workshop will not work properly.
                 If this happens rerun the installer and select the appropriate option.
             </li>
+            <!-- Choosing the SSH executable -->
+            <li>Click on "Next".</li>
             <!-- Configuring the line ending conversions -->
             <li>
-              Click on "Next".
               <strong>
-                Keep "Checkout Windows-style, commit Unix-style line endings" selected.
+                Keep "Checkout Windows-style, commit Unix-style line endings" selected and click on "Next".
               </strong>
             </li>
             <!-- Configuring the terminal emulator to use with Git Bash -->
             <li>
               <strong>
-                Select "Use Windows' default console window" and click on "Next".
+                Keep "Use Windows' default console window" selected and click on "Next".
               </strong>
             </li>
             <!-- Configuring experimental performance tweaks -->
-            <li>Click on "Next".</li>
+            <li>Click on "Install".</li>
             <!-- Installing -->
             <!-- Completing the Git Setup Wizard -->
             <li>Click on "Finish".</li>
@@ -427,7 +388,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   </div>
 </div> <!-- End of 'shell' section. -->
 
-<div id='git'> <!-- Start of 'Git' section. GitHub browser compatability
+<div id="git"> <!-- Start of 'Git' section. GitHub browser compatability
            is given at https://help.github.com/articles/supported-browsers/-->
   <h3>Git</h3>
   <p>
@@ -571,8 +532,8 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
       We will teach Python using the IPython notebook, a programming environment
       that runs in a web browser. For this to work you will need a reasonably
       up-to-date browser. The current versions of the Chrome, Safari and
-      Firefox browsers are all <a
-      href='http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility'>supported</a>
+      Firefox browsers are all
+      <a href="http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility">supported</a>
       (some older browsers, including Internet Explorer version 9
       and below, are not).
     </p>
